@@ -10,8 +10,8 @@ import {
 import { ApiTags } from '@nestjs/swagger';
 import { User } from '@prisma/client';
 
+import { Roles } from '../auth/decorators/roles.decorator';
 import { Role } from '../core/enums/roles.enum';
-import { Roles } from './decorators/roles.decorator';
 import { UsersService } from './users.service';
 
 @ApiTags('Users')
@@ -19,7 +19,7 @@ import { UsersService } from './users.service';
 export class UsersController {
   constructor(private readonly userService: UsersService) {}
   @Get()
-  @Roles(Role.ADMINISTRATOR)
+  @Roles(Role.ADMIN)
   // @UseGuards()
   async getUserList(@Req() req, @Res() res: any): Promise<User[]> {
     // req.headers.authorization.split()

@@ -17,5 +17,6 @@ import { UsersService } from './users.service';
       useClass: RolesGuard,
     },
   ],
+  exports: [UsersService],
 })
 export class UsersModule {}
