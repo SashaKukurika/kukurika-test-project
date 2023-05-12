@@ -12,10 +12,10 @@ export class UsersService {
   }
 
   public async createUser(userData: any): Promise<any> {
-    const { name, email, password } = userData;
+    const { name, email, password, accessToken } = userData;
 
     return this.prismaService.user.create({
-      data: { email, name, password },
+      data: { email, name, password, accessToken },
     });
   }
 

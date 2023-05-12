@@ -6,6 +6,8 @@ import {
   IsStrongPassword,
 } from 'class-validator';
 
+import { Role } from '../../core/enums/roles.enum';
+
 export class CreateUserDto {
   @ApiProperty({ example: 'a629712a-b334-4eaf-be13-9228415cb95f' })
   userId: string;
@@ -25,4 +27,8 @@ export class CreateUserDto {
   @IsEmail()
   @IsNotEmpty()
   email: string;
+
+  @ApiProperty({ example: Role.SELLER })
+  @IsString()
+  role: string;
 }

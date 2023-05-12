@@ -1,4 +1,4 @@
-export enum EUserRoles {
+export enum Role {
   BUYER = 'buyer',
   SELLER = 'seller',
   MANAGER = 'manager',
